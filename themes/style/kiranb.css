@@ -18,13 +18,30 @@
   /* W3C */
   background-attachment: fixed;
 }
+.columns th {
+  border-bottom: 2px solid #0b7495;
+  color: #0b7495;
+  font-weight: normal;
+  padding: 8px 2px;
+}
+.columns td {
+  padding: 12px 30px 10px 30px;
+}
+#components {
+  margin-left:auto; 
+  margin-right:auto;
+}
+#components td {
+  padding: 10px 30px 10px 30px;
+  border: 1px solid rgba(11, 116, 149, 0.5);
+}
 .deck-container > .slide {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 .deck-container > .slide .deck-before, .deck-container > .slide .deck-previous {
   opacity: 0.4;
 }
-.deck-container .slide h1, .deck-container .slide h2, .deck-container .slide h3, .deck-container .slide h4, .deck-container .slide h5, .deck-container .slide h6, .slide th {
+.deck-container .slide h1, .deck-container .slide h2, .deck-container .slide h3, .deck-container .slide h4, .deck-container .slide h5, .deck-container .slide h6 {
   font-weight: 300;
   /*font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;*/
 }
@@ -43,7 +60,7 @@
 .deck-container .slide h3 {
   color: #000;
 }
-.deck-container .slide ul > li {
+.deck-container .slide ul > li, .deck-container .slide ol > li {
   font-weight: 300;
   font-size: 1.3em;
 }

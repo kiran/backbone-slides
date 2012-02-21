@@ -55,9 +55,9 @@
 
 <section class="slide" id="framework">
 	<h2>Why Use a Framework?</h2>
-	 Client-heavy Web apps 
-	<table>
-	<th>No framework:</th><th>With MV*</th>
+	<h3>Client-heavy Web apps</h3>
+	<table class="columns">
+	<th>No framework</th><th>With MV*</th>
 	<tr><td>repeated code</td><td>views update as models do</td></th>
 	<tr><td>low degree of modularity</td><td>model view separation</td></tr>
 	<tr><td>difficult to read and maintain</td><td>familiar MV* pattern</td></tr>
@@ -67,11 +67,11 @@
 <section class="slide" id="others">
 	<h2>Other Frameworks</h2>
 	<ul>
-	<li>Spine.js (written in CoffeeScript)</li>
-	<li>Ember (formerly SproutCore)</li>
-	<li>Knockout.js</li>
-	<li>JavaScriptMVC</li>
-	<li>Batman.js</li>
+	<li class="slide" id="spine">Spine.js (written in CoffeeScript)</li>
+	<li class="slide" id="ember">Ember (formerly SproutCore)</li>
+	<li class="slide" id="knockout">Knockout.js</li>
+	<li class="slide" id="jsMVC">JavaScriptMVC</li>
+	<li class="slide" id="batman">Batman.js</li>
 	</ul>
 </section>
 
@@ -79,25 +79,11 @@
     <h2>Backbone Background</h2>
 
     <ul>
-	    <li class="slide" id="author">
-	            Written by jashkenas
-	    </li>
-	
-	    <li class="slide" id="weight">
-		    lightweight: 4.6 kb
-	    </li>
-
-	    <li class="slide" id="source">
-		    great, readable source
-	    </li>
-
-	    <li class="slide" id="integration">
-		    easy integration with RESTful interfaces
-	    </li>
-
-	    <li class="slide" id="extensions-status">
-		    dependencies: Underscore, jQuery/zepto
-	    </li>
+	    <li> Written by jashkenas</li>
+	    <li>lightweight: 4.6 kb</li>
+	    <li>great, readable source</li>
+        <li>easy integration with RESTful interfaces</li>
+        <li>dependencies: Underscore, jQuery/zepto</li>
     </ul>
 	
 </section>
@@ -124,7 +110,7 @@
 
 <section class="slide" id="components">
     <h2>Main Components</h2>
-    <table>
+    <table id="components">
     <tr><td>Model</td><td>maintains state</td></tr>
     <tr><td>Collection</td><td>collection of models</td></tr>
     <tr><td>View</td><td>presents model data in the DOM</td></tr>
@@ -139,8 +125,8 @@
 <section class="slide" id="models">
     <h2>Models and Collections</h2>
     <ul>
-    <li><code>Backbone.Model.extend(<em>properties, [classProperties]</em>)</code></li>
-    <li><code>Backbone.Collection.extend(<em>properties, [classProperties])</em></code>
+    <li><code class="prettyprint">Backbone.Model.extend(<em>properties, [classProperties]</em>)</code></li>
+    <li><code class="prettyprint">Backbone.Collection.extend(<em>properties, [classProperties])</em></code>
         <ul><li>can filter collections by specific criteria</li>
         <li>maintains a collection order if given a comparator</li></ul>
     </li>
@@ -151,7 +137,7 @@
     <h2>Views</h2>
     <ul>
         <li> NOT the templates themselves </li>
-        <li><code>Backbone.View.extend(<em>properties, [classProperties]</em>)</code></li>
+        <li><code class="prettyprint">Backbone.View.extend(<em>properties, [classProperties]</em>)</code></li>
         <li> <code>this.el</code> : the DOM element the view binds to 
             <ul><li>specify <code>tagName</code>, <code>className</code>, <code>id</code>, <code>el</code> directly</li></ul>
         <li> override <code>render()</code> to create the view </li>
@@ -251,6 +237,22 @@
         <li><a href="http://documentcloud.github.com/backbone/">Backbone documentation</a></li>
         <li><a href="http://documentcloud.github.com/backbone/docs/backbone.html">Backbone annotated source code</a></li>
         <li><a href="http://documentcloud.github.com/underscore/">Underscore docs</a></li>
+    </ul>
+</section>
+
+<section class="slide" id="web-resources">
+    <h2>Online Resources</h2>
+    <ul>
+        <li></li>
+    </ul>
+</section>
+
+<section class="slide" id="books">
+    <h2>Books</h2>
+    <ul>
+    <li><em>JavaScript Web Applications</em>, Alex MacCaw (author of Spine)</li>
+        <ul><li>(chapter on Backbone a little out of date)</li></ul>
+    <li>thoughtbot's <em>Backbone.js on Rails</em></li>
     </ul>
 </section>
 
