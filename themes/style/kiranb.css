@@ -18,6 +18,9 @@
   /* W3C */
   background-attachment: fixed;
 }
+.attribution {
+  font-size: 0.5em;
+}
 .columns th {
   border-bottom: 2px solid #0b7495;
   color: #0b7495;
@@ -34,6 +37,19 @@
 #components td {
   padding: 10px 30px 10px 30px;
   border: 1px solid rgba(11, 116, 149, 0.5);
+}
+.image td {
+  padding: 0px 0px 0px 0px;
+}
+.image {
+  display: inline;
+  float: right;
+}
+.image img {
+  margin: 0;
+}
+.image caption {
+  font-size: 80%;
 }
 .deck-container > .slide {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);

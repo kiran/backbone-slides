@@ -1,6 +1,6 @@
 Backbone.js slides
 ============================
-Slides for a Backbone.js talk given at CodeSocial on February 22nd.  Built with [deck.js](https://github.com/imakewebthings/deck.js) and [deck.js-codemirror](https://github.com/iros/deck.js-codemirror).
+Slides for a Backbone.js talk given at CodeSocial on February 22nd.  Built with [deck.js](https://github.com/imakewebthings/deck.js), [deck.js-codemirror](https://github.com/iros/deck.js-codemirror), and [google-code-prettify](http://code.google.com/p/google-code-prettify/).
 
 Slides are available at index.html.
 

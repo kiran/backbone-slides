@@ -49,13 +49,17 @@
 		<li>Components</li>
 		<li>Rails Integration</li>
 	</ol>
-	<img src="http://documentcloud.github.com/backbone/docs/images/backbone.png"/>
+	<img src="http://documentcloud.github.com/backbone/docs/images/backbone.png" />
 	<img src="http://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Ruby_on_Rails.svg/200px-Ruby_on_Rails.svg.png" />
 </section>
 
 <section class="slide" id="framework">
 	<h2>Why Use a Framework?</h2>
-	<h3>Client-heavy Web apps</h3>
+	<h3>Client-heavy Web apps</h3>	<table class="image">
+        <caption align="bottom">Because spaghetti code is not delicious.</caption>
+        <tr><td><img src="./images/spaghetti.jpg"/></td></tr>
+        <tr><td><a class="attribution" href="http://www.flickr.com/photos/preppybyday/">Photo from TheCulinaryGeek</a></td></tr>
+        </table>
 	<table class="columns">
 	<th>No framework</th><th>With MV*</th>
 	<tr><td>repeated code</td><td>views update as models do</td></th>
@@ -184,11 +188,21 @@
         <li>Limit the interface to a JSON REST API</li>
         <li>File Organization:
             <ul>
-            <li>pre-Rails 3.0: Jammit or /public/javascripts</li>
+            <li>Rails 3.0 or less: Jammit or /public/javascripts</li>
             <li>Rails 3.1: asset pipeline or rails-backbone gem</li>
             </ul>
         </li>
     </ul>
+    <table class="image" style="float:left">
+        <caption align="bottom">Rails 3.0 or less.</caption>
+        <tr><td><img src="./images/cloud_edit_tree_js.gif" width=400px/></td></tr>
+        <tr><td><a class="attribution" href="http://patshaughnessy.net/2011/6/28/where-does-my-javascript-code-go-backbone-jst-and-the-rails-3-1-asset-pipeline">Photo from Pat Shaughnessy</a></td></tr>
+    </table>
+    <table class="image">
+        <caption align="bottom">Rails 3.1</caption>
+        <tr><td><img src="./images/backbone_rails_scaffold.gif" width=400px/></td></tr>
+        <tr><td><a class="attribution" href="http://patshaughnessy.net/2011/6/28/where-does-my-javascript-code-go-backbone-jst-and-the-rails-3-1-asset-pipeline">Photo from Pat Shaughnessy</a></td></tr>
+    </table>
 </section>
 
 <section class="slide" id="model-integration">
@@ -243,16 +257,20 @@
 <section class="slide" id="web-resources">
     <h2>Online Resources</h2>
     <ul>
-        <li></li>
+        <li><a href="http://patshaughnessy.net/2011/6/28/where-does-my-javascript-code-go-backbone-jst-and-the-rails-3-1-asset-pipeline">Blog post: Where does the JS code go?</a></li>
+        <li><a href="http://weblog.bocoup.com/organizing-your-backbone-js-application-with-modules/">Organizing your Backbone.js code with modules</a></li>
+        <li><a href="http://www.jamesyu.org/2011/01/27/cloudedit-a-backbone-js-tutorial-by-example/">CloudEdit: A Backbone.js Tutorial with Rails</a></li>
+        <li><a href="https://github.com/addyosmani/backbone-fundamentals">Book: Developing Backbone.js Applications</a></li>
+        <li><a href="https://github.com/documentcloud/backbone/wiki/Tutorials%2C-blog-posts-and-example-sites">From the Backbone wiki: A long list of tutorials</a></li>
     </ul>
 </section>
 
 <section class="slide" id="books">
-    <h2>Books</h2>
+    <h2>Paid Resources</h2>
     <ul>
     <li><em>JavaScript Web Applications</em>, Alex MacCaw (author of Spine)</li>
         <ul><li>(chapter on Backbone a little out of date)</li></ul>
-    <li>thoughtbot's <em>Backbone.js on Rails</em></li>
+    <li>thoughtbot's <a href="https://workshops.thoughtbot.com/backbone-js-on-rails">Backbone.js on Rails</a></li>
     </ul>
 </section>
 
