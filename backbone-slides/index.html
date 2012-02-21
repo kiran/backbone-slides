@@ -163,17 +163,95 @@
     <h2>Router and History</h2>
     <ul>
         <li> connect the application's state to the URL's hash fragment </li>
-        <li><code>Backbone.Router</code> provides methods for routing client-side pages, and connecting them to their actions and events.</li>
+        <li><code>Backbone.Router</code> provides methods for routing client-side pages, and connecting them to their actions and events.
         <ul>
             <li><code class="prettyprint">"search/:query":"search"  // #search/kiwis calls search('kiwis')</code></li>
             <li><code class="prettyprint">"find/*path":"find"   // #find/kiranb/hi calls find('kiranb/hi')</code></li>
         </ul>
+        </li>
         <li><code>Backbone.History</code> serves as a global router (per frame) to handle hashchange events or pushState</li>
     </ul>
 </section>
 
 <section class="slide" id="sync">
     <h2>Sync</h2>
+    <ul>
+        <li><code>Backbone.sync</code> called every time a model is read/sent to the server</li>
+        <li>defaults to <code>$.ajax</code></li>
+        <li><code>sync (<em>method, model, [options]</em>)</code>
+            <ul>
+            <li><em>method:</em> one of CRUD (maps to REST in the usual manner)</li>
+            <li><em>model:</em> model to update</li>
+            <li><em>options:</em> success and error callbacks, ajax options</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="rails-integration">
+    <h1>Integration Overview</h1>
+</section>
+
+<section class="slide" id="integration-overview">
+    <h2>Integration Overview</h2>
+    <ul>
+        <li>Limit the interface to a JSON REST API</li>
+        <li>File Organization:
+            <ul>
+            <li>pre-Rails 3.0: Jammit or /public/javascripts</li>
+            <li>Rails 3.1: asset pipeline or rails-backbone gem</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="model-integration">
+    <h2>Model Integration</h2>
+    <ul>
+        <li>Backbone model interacts with your app's JSON API</li>
+        <li>don't need to have a one-to-one mapping with your Rails models</li>
+        <li>probably will have one normal RESTful Rails controller per Backbone model</li>
+        <li>use <code>respond_with</code> to deal with the JSON</li>
+    </ul>
+</section>
+
+<section class="slide" id="validation">
+    <h2>Validation</h2>
+    <ul>
+        <li>Backbone will perform client-side validation</li>
+        <li>To handle server-side validation:</li>
+        <ul>
+            <li><code class="prettyprint">model.save({properties}, {error:function(){
+            //handle server error<br>
+            }});</code></li>
+            <li>error is called if the server returns a non-200 HTTP response code</li>
+        </ul>
+    </ul>
+</section>
+
+<section class="slide" id="view-integration">
+    <h2>View Integration</h2>
+    <ul>
+        <li>Each Backbone view is bound to an <code>el</code> in the DOM.</li>
+        <li>Use templating (keeps HTML out of your JS)</li>
+        <ul>
+            <li>built into Underscore, but you can use any templating engine</li>
+            <li>change _'s <code>templateSettings</code> to use {{ }} instead of %= if you're mixing into erb or haml</li>
+        </ul>
+    </ul>
+</section>
+
+<section class="slide" id="more-info">
+    <h1>More Information</h1>
+</section>
+
+<section class="slide" id="documentation">
+    <h2>Documentation</h2>
+    <ul>
+        <li><a href="http://documentcloud.github.com/backbone/">Backbone documentation</a></li>
+        <li><a href="http://documentcloud.github.com/backbone/docs/backbone.html">Backbone annotated source code</a></li>
+        <li><a href="http://documentcloud.github.com/underscore/">Underscore docs</a></li>
+    </ul>
 </section>
 
 <!-- deck.navigation snippet -->
