@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,300italic);
 .deck-container {
   font-family: "Gill Sans", "Gill Sans MT","Open Sans", Calibri, sans-serif;
-  font-size: 1.25em;
+  font-size: 1.5em;
   background: #f4fafe;
   /* Old browsers */
   background: -moz-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
@@ -17,6 +17,13 @@
   background: linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
   /* W3C */
   background-attachment: fixed;
+}
+.slide h2 {
+  text-align: center;
+  padding-top: 10%;
+}
+.deck-container ul, .deck-container ol {
+  margin-left: 10%;
 }
 .attribution {
   font-size: 0.5em;
@@ -68,7 +75,7 @@
   color: #0b7495;
   border-bottom: 0;
 }
-.cssreflections .deck-container .slide h2 {
+.cssreflections .deck-container .slide h1 {
   line-height: 1;
   -webkit-box-reflect: below -0.556em -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), color-stop(0.7, rgba(255, 255, 255, 0.1)), to(transparent));
   -moz-box-reflect: below -0.556em -moz-linear-gradient(top, transparent 0%, transparent 30%, rgba(255, 255, 255, 0.3) 100%);
