@@ -44,7 +44,7 @@
 
 <section class="slide" id="overview">
 	<h2>Talk Overview</h2>
-	<ol>
+	<ol style="float:right">
 		<li>Why Use a Framework?</li>
 		<li>Backbone Basics</li>
 		<li>Components</li>
@@ -58,7 +58,7 @@
 	<h2>Why Use a Framework?</h2>
 	<h3>Client-heavy Web apps</h3>	<table class="image">
         <caption align="bottom">Because spaghetti code is not delicious.</caption>
-        <tr><td><img src="./images/spaghetti.jpg"/></td></tr>
+        <tr><td><img class='boxshadow' src="./images/spaghetti.jpg"/></td></tr>
         <tr><td><a class="attribution" href="http://www.flickr.com/photos/preppybyday/">Photo from TheCulinaryGeek</a></td></tr>
         </table>
 	<table class="columns">
@@ -73,10 +73,10 @@
 	<h2>Other Frameworks</h2>
 	<ul>
 	<li class="slide" id="spine">Spine.js (written in CoffeeScript)</li>
-	<li class="slide" id="ember">Ember (formerly SproutCore)</li>
-	<li class="slide" id="knockout">Knockout.js</li>
-	<li class="slide" id="jsMVC">JavaScriptMVC</li>
-	<li class="slide" id="batman">Batman.js</li>
+	<li class="slide" id="ember">Ember (formerly SproutCore; feature-rich)</li>
+	<li class="slide" id="knockout">Knockout.js (MVVM)</li>
+	<li class="slide" id="jsMVC">JavaScriptMVC (comprehensive; jQuery-like)</li>
+	<li class="slide" id="batman">Batman.js (server in Node.js)</li>
 	</ul>
 </section>
 
@@ -87,6 +87,7 @@
 	    <li> Written by jashkenas</li>
 	    <li>lightweight: 4.6 kb</li>
 	    <li>great, readable source</li>
+	    <li>flexible: override everything!</li>
         <li>easy integration with RESTful interfaces</li>
         <li>dependencies: Underscore, jQuery/zepto</li>
     </ul>
@@ -96,32 +97,24 @@
 <section class="slide" id="official-description">
     <h2>Official Blurb</h2>
     <blockquote cite="http://documentcloud.github.com/backbone/">
-	    <p>Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface. </p>
+	    <p>Backbone.js gives structure to web applications by providing models with <em>key-value binding</em> and custom events, collections with a rich API of <em>enumerable functions</em>, views with <em>declarative event handling</em>, and connects it all to your existing API over a <em>RESTful JSON interface.</em> </p>
 	    <p><cite>from docs</cite></p>
     </blockquote>
 </section>
 
-<section class="slide" id="general-use">
-    <h2>General Utility</h2>
-    <ul>
-    <li>Bind callbacks to events on models to update views</li>
-    <li>Sync client-side models to server models</li>
-    </ul>
-</section>
-
-<section class="slide" id="transition">
-    <h1>Components</h1>
+<section class="slide" id="vertebrae">
+    <h1>Vertebrae</h1>
 </section>
 
 <section class="slide" id="components">
     <h2>Main Components</h2>
     <table id="components">
     <tr><td>Model</td><td>maintains state</td></tr>
-    <tr><td>Collection</td><td>collection of models</td></tr>
+    <tr><td>Collection</td><td>ordered sets of models</td></tr>
     <tr><td>View</td><td>presents model data in the DOM</td></tr>
     <tr><td>Router</td><td>maps HTML routes to actions</td></tr>
     <tr><td>History</td><td>handles URL hash changes (or pushState)</td></tr>
-    <tr><td>Sync</td><td>keeps server and JS models in sync</td></tr>
+    <tr><td>Sync</td><td>persistence module</td></tr>
     <tr><td>Underscore</td><td>JS toolbox</td></tr>
     <tr><td>$</td><td>jQuery or Zepto</td></tr>
     </table>
@@ -129,24 +122,26 @@
 
 <section class="slide" id="compenents-diagram">
   <h2>Vertebrae</h2>
-  <img src="./images/components.png"/>
+  <img class='dropshadow' src="./images/components.png"/>
 </section>
 
 <section class="slide" id="models">
     <h2>Models and Collections</h2>
     <ul>
     <li><code class="prettyprint">Backbone.Model.extend(<em>properties, [classProperties]</em>)</code></li>
+      <ul><li>getters and setters on attributes</li></ul>
     <li><code class="prettyprint">Backbone.Collection.extend(<em>properties, [classProperties])</em></code>
         <ul><li>can filter collections by specific criteria</li>
         <li>maintains a collection order if given a comparator</li></ul>
     </li>
+    <li><code>url</code> attribute determines where requests are sent</li>
     </ul>
 </section>
 
 <section class="slide" id="views">
     <h2>Views</h2>
     <ul>
-        <li> NOT the templates themselves </li>
+        <li> NOT the templates themselves.  View classes!</li>
         <li><code class="prettyprint">Backbone.View.extend(<em>properties, [classProperties]</em>)</code></li>
         <li> <code>this.el</code> : the DOM element the view binds to 
             <ul><li>specify <code>tagName</code>, <code>className</code>, <code>id</code>, <code>el</code> directly</li></ul>
@@ -159,22 +154,23 @@
     <h2>Router and History</h2>
     <ul>
         <li> connect the application's state to the URL's hash fragment </li>
-        <li><code>Backbone.Router</code> provides methods for routing client-side pages, and connecting them to their actions and events.
+        <li><code>Backbone.Router</code> provides methods for routing client-side pages.
         <ul>
             <li><code class="prettyprint">"search/:query":"search"  // #search/kiwis calls search('kiwis')</code></li>
             <li><code class="prettyprint">"find/*path":"find"   // #find/kiranb/hi calls find('kiranb/hi')</code></li>
         </ul>
         </li>
-        <li><code>Backbone.History</code> serves as a global router (per frame) to handle hashchange events or pushState</li>
+        <li><code>Backbone.History</code></li>
+          <ul><li>watches for URL changes (hash or pushState), then dispatches to the Router</li>
     </ul>
 </section>
 
 <section class="slide" id="sync">
     <h2>Sync</h2>
     <ul>
-        <li><code>Backbone.sync</code> called every time a model is read/sent to the server</li>
+        <li><code>Backbone.sync</code> called every time a model is read from or sent to the server</li>
         <li>defaults to <code>$.ajax</code></li>
-        <li><code>sync (<em>method, model, [options]</em>)</code>
+        <li>can override <code>sync (<em>method, model, [options]</em>)</code>
             <ul>
             <li><em>method:</em> one of CRUD (maps to REST in the usual manner)</li>
             <li><em>model:</em> model to update</li>
@@ -199,11 +195,12 @@
             </ul>
         </li>
     </ul>
+    <img class="boxshadow" src='./images/integration.png'>
 </section>
 
 <section class="slide" id="component-integration">
   <h2>Fleshing Things Out</h2>
-  <img src="./images/integration.png" />
+  <img class='dropshadow' src="./images/rails-integration.png" />
 </section>
 
 <section class="slide" id="model-integration">
@@ -213,20 +210,6 @@
         <li>don't need to have a one-to-one mapping with your Rails models</li>
         <li>probably will have one normal RESTful Rails controller per Backbone model</li>
         <li>use <code>respond_with</code> to deal with the JSON</li>
-    </ul>
-</section>
-
-<section class="slide" id="validation">
-    <h2>Validation</h2>
-    <ul>
-        <li>Backbone will perform client-side validation</li>
-        <li>To handle server-side validation:</li>
-        <ul>
-            <li><code class="prettyprint">model.save({properties}, {error:function(){
-            //handle server error<br>
-            }});</code></li>
-            <li>error is called if the server returns a non-200 HTTP response code</li>
-        </ul>
     </ul>
 </section>
 
@@ -242,8 +225,8 @@
     </ul>
 </section>
 
-<section class="slide" id="more-info">
-    <h1>More Information</h1>
+<section class="slide" id="resources">
+    <h1>Resources</h1>
 </section>
 
 <section class="slide" id="documentation">
@@ -272,6 +255,27 @@
     <li><em>JavaScript Web Applications</em>, Alex MacCaw (author of Spine)</li>
         <ul><li>(chapter on Backbone a little out of date)</li></ul>
     <li>thoughtbot's <a href="https://workshops.thoughtbot.com/backbone-js-on-rails">Backbone.js on Rails</a></li>
+    </ul>
+</section>
+
+<section class="slide" id="Questions">
+  <h1>Questions</h1>
+</section>
+<section class="slide" id="appendix">
+  <h1>Appendix</h1>
+</section>
+
+<section class="slide" id="validation">
+    <h2>Validation</h2>
+    <ul>
+        <li>Backbone will perform client-side validation</li>
+        <li>To handle server-side validation:</li>
+        <ul>
+            <li><code class="prettyprint">model.save({properties}, {error:function(){
+            //handle server error<br>
+            }});</code></li>
+            <li>error is called if the server returns a non-200 HTTP response code</li>
+        </ul>
     </ul>
 </section>
 
