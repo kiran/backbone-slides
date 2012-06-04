@@ -2,7 +2,7 @@ Backbone.js slides
 ============================
 Slides for a Backbone.js talk given at CodeSocial on February 22nd.  Built with [deck.js](https://github.com/imakewebthings/deck.js), [deck.js-codemirror](https://github.com/iros/deck.js-codemirror), and [google-code-prettify](http://code.google.com/p/google-code-prettify/).
 
-Slides are available at index.html.
+Slides are available at http://kiranb.scripts.mit.edu/backbone-slides/
 
 #deck.js
 
@@ -18,3 +18,4 @@ A JavaScript library for building modern HTML presentations. deck.js is flexible
 Copyright (c) 2011 Caleb Troughton
 
 Dual licensed under the [MIT license](https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt) and [GPL license](https://github.com/imakewebthings/deck.js/blob/master/GPL-license.txt).
+
